@@ -39,7 +39,7 @@ class AudioService {
         
         let reverb = AKReverb(delay)
         
-        //set chordIndex, autoplay
+        //testing
         let timer = AKPeriodicFunction(every: timeStep) {
             self.conductor!.chordIndex = Int(sin(self.time))
             print("self.conductor!.chordIndex: \(self.conductor!.chordIndex)")
