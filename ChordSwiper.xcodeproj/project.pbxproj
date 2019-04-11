@@ -19,6 +19,7 @@
 		A9715CB2225F237200560746 /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9715CB0225F237200560746 /* AudioKitUI.framework */; };
 		A9715CB3225F237200560746 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9715CB1225F237200560746 /* AudioKit.framework */; };
 		A9715CB5225F245300560746 /* 345px-Chladini2.png in Resources */ = {isa = PBXBuildFile; fileRef = A9715CB4225F245300560746 /* 345px-Chladini2.png */; };
+		A9715CB7225F2B0C00560746 /* hand.png in Resources */ = {isa = PBXBuildFile; fileRef = A9715CB6225F2B0C00560746 /* hand.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		A9715CB0225F237200560746 /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKitUI.framework; path = ChordSwiper/AudioKitUI.framework; sourceTree = "<group>"; };
 		A9715CB1225F237200560746 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = ChordSwiper/AudioKit.framework; sourceTree = "<group>"; };
 		A9715CB4225F245300560746 /* 345px-Chladini2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "345px-Chladini2.png"; sourceTree = "<group>"; };
+		A9715CB6225F2B0C00560746 /* hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hand.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				A9715CA9225F22C400560746 /* Conductor.swift */,
 				A9715CAB225F22D500560746 /* AudioService.swift */,
 				A9715CAD225F22E300560746 /* Scales.swift */,
+				A9715CB6225F2B0C00560746 /* hand.png */,
 				A9715C99225F223B00560746 /* Main.storyboard */,
 				A9715C9C225F224A00560746 /* Assets.xcassets */,
 				A9715C9E225F224A00560746 /* LaunchScreen.storyboard */,
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9715CA0225F224A00560746 /* LaunchScreen.storyboard in Resources */,
+				A9715CB7225F2B0C00560746 /* hand.png in Resources */,
 				A9715CB5225F245300560746 /* 345px-Chladini2.png in Resources */,
 				A9715C9D225F224A00560746 /* Assets.xcassets in Resources */,
 				A9715C9B225F223B00560746 /* Main.storyboard in Resources */,
