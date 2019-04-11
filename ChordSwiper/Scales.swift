@@ -7,34 +7,35 @@
 //
 
 import Foundation
+
 class NoteNumberService {
     
     //Present musical scales defined as note numbers
     let notes = IntervalTypes()
     var scales:[[[Int]]] = [[], [], []]
     
-    //Swipe position animation (scales.columns)
-    //Default chord layout for 4 swipe strips: 'Minor', 'Root', 'Fourth' & 'Fifth'
+    //   Chords, determined from swipe position
+    //Default chord layout for 4 swipe strips
     let numberOfRegions = 4
-    /*e.g. chords:
+    /*'Minor', 'Root', 'Fourth' & 'Fifth' chords for regions:
      0: A minor -> notes (E, A, C) -> notenumbers 17;24;29;
      1: C (C, E, G),
      2: F (F, C, A) &
      3: G (G, B, D). */
     
-    //    number of touches variants (scales.rows)
-    enum row: Int {case Basic = 0, VariantVII, VariantVI }
+    //    Scale variant, determined from number of touches
+    enum row: Int {case basic = 0, variantVII, variantVI }
     //    VII'th: two finger swipe, intervalType: 'scale*7' &
     //    VI'th': three finger swipe, intervalType: 'scale*6'.
-    //    (Four finger swipe subtracts notenumbers of .Basic chord scale intervals)
+    //    (Four finger swipe uses .basic)
     
-    //store notenumber data for each chord of region, to new row for each scale variant
+    //store notenumber data for each chord of region, to row for each scale variant
     init() {
-        appendNotes(row.Basic.rawValue,
-                    [notes.scaleMinA, notes.scaleMajC, notes.scaleMajF, notes.scaleMajG ])
-        appendNotes(row.VariantVII.rawValue,
-                    [notes.scaleMinA7, notes.scaleMajC7,  notes.scaleMajF7, notes.scaleMajG7 ])
-        appendNotes(row.VariantVI.rawValue,
+        appendNotes(row.basic.rawValue,
+                    [notes.scaleMinA, notes.scaleMajC, notes.scaleMajF, notes.scaleMajG     ])
+        appendNotes(row.variantVII.rawValue,
+                    [notes.scaleMinA7, notes.scaleMajC7, notes.scaleMajF7, notes.scaleMajG7 ])
+        appendNotes(row.variantVI.rawValue,
                     [notes.scaleMinA6, notes.scaleMajC6, notes.scaleMajF6, notes.scaleMajG6 ])
     }
     
