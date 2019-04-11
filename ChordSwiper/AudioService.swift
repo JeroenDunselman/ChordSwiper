@@ -10,35 +10,37 @@ import Foundation
 import AudioKit
 
 class AudioService {
+    var conductor: Conductor?
+    
     var time = 0.0
     let timeStep = 0.05
     
     let oscillator = AKOscillatorBank(waveform: AKTable(.sawtooth, count: 256))
     let filter: AKRolandTB303Filter?
-    let mandolin = AKMandolin()
-    //    let bar = AKMetalBar()
-    var mixer = AKMixer()
-    
-    let pluckPosition = 0.2
-    let delay: AKDelay?
-    var conductor: Conductor?
     let freqMax: Double = 1_350
-    init() { //_ conductor: Conductor) {
+    
+    let mandolin = AKMandolin()
+    let pluckPosition = 0.2
+    
+    var mixer = AKMixer()
+    let delay: AKDelay?
+    
+    init() {
         filter = AKRolandTB303Filter(oscillator)
         filter!.cutoffFrequency = freqMax
         filter!.resonance = 0.6
         
         mandolin.detune = 1
         mandolin.bodySize = 1
+        
         [filter!, mandolin,] >>> mixer //
-        delay = AKDelay(mixer) //mandolin)
+        delay = AKDelay(mixer)
         setupDelay()
         
         let reverb = AKReverb(delay)
         
         //set chordIndex, autoplay
         let timer = AKPeriodicFunction(every: timeStep) {
-            //    moet ook .output zijn?        panner.pan = sin(time)
             self.conductor!.chordIndex = Int(sin(self.time))
             print("self.conductor!.chordIndex: \(self.conductor!.chordIndex)")
             self.time += self.timeStep
@@ -69,7 +71,6 @@ class AudioService {
         oscillator.play(noteNumber: noteNumber, velocity: 64)
     }
     
-    //not in use for plucked instrument
     func noteOff(note: MIDINoteNumber) {
         oscillator.stop(noteNumber: note)
     }
