@@ -12,6 +12,13 @@
 		A9715C9B225F223B00560746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9715C99225F223B00560746 /* Main.storyboard */; };
 		A9715C9D225F224A00560746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9715C9C225F224A00560746 /* Assets.xcassets */; };
 		A9715CA0225F224A00560746 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9715C9E225F224A00560746 /* LaunchScreen.storyboard */; };
+		A9715CA8225F22B500560746 /* Fire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9715CA7225F22B400560746 /* Fire.swift */; };
+		A9715CAA225F22C400560746 /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9715CA9225F22C400560746 /* Conductor.swift */; };
+		A9715CAC225F22D500560746 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9715CAB225F22D500560746 /* AudioService.swift */; };
+		A9715CAE225F22E300560746 /* Scales.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9715CAD225F22E300560746 /* Scales.swift */; };
+		A9715CB2225F237200560746 /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9715CB0225F237200560746 /* AudioKitUI.framework */; };
+		A9715CB3225F237200560746 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9715CB1225F237200560746 /* AudioKit.framework */; };
+		A9715CB5225F245300560746 /* 345px-Chladini2.png in Resources */ = {isa = PBXBuildFile; fileRef = A9715CB4225F245300560746 /* 345px-Chladini2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		A9715C9C225F224A00560746 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9715C9F225F224A00560746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9715CA1225F224A00560746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9715CA7225F22B400560746 /* Fire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fire.swift; sourceTree = "<group>"; };
+		A9715CA9225F22C400560746 /* Conductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conductor.swift; sourceTree = "<group>"; };
+		A9715CAB225F22D500560746 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		A9715CAD225F22E300560746 /* Scales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scales.swift; sourceTree = "<group>"; };
+		A9715CB0225F237200560746 /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKitUI.framework; path = ChordSwiper/AudioKitUI.framework; sourceTree = "<group>"; };
+		A9715CB1225F237200560746 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = ChordSwiper/AudioKit.framework; sourceTree = "<group>"; };
+		A9715CB4225F245300560746 /* 345px-Chladini2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "345px-Chladini2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9715CB2225F237200560746 /* AudioKitUI.framework in Frameworks */,
+				A9715CB3225F237200560746 /* AudioKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +56,7 @@
 			children = (
 				A9715C94225F223B00560746 /* ChordSwiper */,
 				A9715C93225F223B00560746 /* Products */,
+				A9715CAF225F237200560746 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +73,26 @@
 			children = (
 				A9715C95225F223B00560746 /* AppDelegate.swift */,
 				A9715C97225F223B00560746 /* ViewController.swift */,
+				A9715CA7225F22B400560746 /* Fire.swift */,
+				A9715CB4225F245300560746 /* 345px-Chladini2.png */,
+				A9715CA9225F22C400560746 /* Conductor.swift */,
+				A9715CAB225F22D500560746 /* AudioService.swift */,
+				A9715CAD225F22E300560746 /* Scales.swift */,
 				A9715C99225F223B00560746 /* Main.storyboard */,
 				A9715C9C225F224A00560746 /* Assets.xcassets */,
 				A9715C9E225F224A00560746 /* LaunchScreen.storyboard */,
 				A9715CA1225F224A00560746 /* Info.plist */,
 			);
 			path = ChordSwiper;
+			sourceTree = "<group>";
+		};
+		A9715CAF225F237200560746 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9715CB1225F237200560746 /* AudioKit.framework */,
+				A9715CB0225F237200560746 /* AudioKitUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9715CA0225F224A00560746 /* LaunchScreen.storyboard in Resources */,
+				A9715CB5225F245300560746 /* 345px-Chladini2.png in Resources */,
 				A9715C9D225F224A00560746 /* Assets.xcassets in Resources */,
 				A9715C9B225F223B00560746 /* Main.storyboard in Resources */,
 			);
@@ -135,8 +167,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9715CAE225F22E300560746 /* Scales.swift in Sources */,
+				A9715CAC225F22D500560746 /* AudioService.swift in Sources */,
 				A9715C98225F223B00560746 /* ViewController.swift in Sources */,
+				A9715CA8225F22B500560746 /* Fire.swift in Sources */,
 				A9715C96225F223B00560746 /* AppDelegate.swift in Sources */,
+				A9715CAA225F22C400560746 /* Conductor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +253,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lstdc++";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -271,6 +308,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-lstdc++";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -284,12 +322,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 447M47227T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ChordSwiper",
+				);
 				INFOPLIST_FILE = ChordSwiper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.onomatopoeia.ChordSwiper;
+				PRODUCT_BUNDLE_IDENTIFIER = "-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -302,12 +345,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 447M47227T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ChordSwiper",
+				);
 				INFOPLIST_FILE = ChordSwiper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.onomatopoeia.ChordSwiper;
+				PRODUCT_BUNDLE_IDENTIFIER = "-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
