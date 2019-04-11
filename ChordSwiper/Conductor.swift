@@ -59,7 +59,7 @@ class Conductor {
     var recordedEvents: [SwipeEvent] = []
     var recordStarted: Date?
     
-    let replayEnabled = true
+    let replayEnabled = false
     var replaySequenceIndex = 0
     var replayTimer: Timer?
     
@@ -161,9 +161,6 @@ extension Conductor {
     }
     
     func determineCurrentNote() -> Int {
-        //        var octave = 0
-        //        if octaveIndex == 0 {octave = -12}
-        //        if octaveIndex == 2 {octave = 12}
         let octave = octaveIndex == 0 ? -12 : ( octaveIndex == 2 ? 12 : 0)
         
         return octave + 40 + chords.scales[self.chordVariant][self.chordIndex % self.chords.scales[0].count][sequence[sequenceIndex % sequence.count]] + fourFingerTranspose
@@ -195,25 +192,20 @@ extension Conductor {
 extension Conductor {
     
     @objc func playRecursive() {
-        let chordSwitchAfterNoteCount = 24
         let initialEvent = SenderData(velocity: CGPoint(x: 0, y: 0),
                                       position: CGPoint(x: 0, y: 0),
                                       fingerCount: 0)
         playNextNote(initialEvent)
-        //        handleEventWith(initialEvent)
         sequenceIndex += 1
         
-        if sequenceIndex > 100 || autoPlayCancelled {// print("max sequence reached")
+        if sequenceIndex > 100 || autoPlayCancelled {
             orchestra.allNotesOff()
             return
         }
-        
-        if sequenceIndex % chordSwitchAfterNoteCount > 0 {
-            //wel mooi maar niet wat ik bedoel
-            chordIndex += 1
-            client.chordChanged()
-        }
-        
+
+        chordIndex += 1
+        client.chordChanged()
+
         //schedule next trigger
         self.autoPlaytimer = Timer.scheduledTimer(timeInterval: autoPlayInterval, target:self, selector: #selector(self.playRecursive), userInfo: nil, repeats: false)
     }
