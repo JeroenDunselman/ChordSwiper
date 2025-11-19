@@ -1,0 +1,57 @@
+workflows:
+  ios-chordswiper:
+    name: ChordSwiper iOS Build
+    instance_type: mac_mini_m1
+    max_build_duration: 60
+    environment:
+      vars:
+        XCODE_WORKSPACE: "ChordSwiper.xcworkspace"
+        XCODE_SCHEME: "ChordSwiper"               # verander dit als je scheme anders heet
+      xcode: latest
+      cocoapods: default
+
+    triggering:
+      events:
+        - push
+        - tag
+      branch_patterns:
+        - pattern: '*'
+          include: true
+          source: true
+
+    scripts:
+      - name: Install CocoaPods (indien nodig)
+        script: |
+          if [ -f Podfile ]; then
+            pod install || echo "Geen Pods of al geïnstalleerd"
+          else
+            echo "Geen Podfile gevonden – doorgaan zonder Pods"
+          fi
+
+      - name: Build IPA
+        script: |
+          xcodebuild -workspace "$CM_BUILD_DIR/ChordSwiper.xcworkspace" \
+                     -scheme "$XCODE_SCHEME" \
+                     -configuration Release \
+                     -allowProvisioningUpdates \
+                     -archivePath build/ChordSwiper.xcarchive \
+                     archive
+
+          xcodebuild -exportArchive \
+                     -archivePath build/ChordSwiper.xcarchive \
+                     -exportOptionsPlist exportOptions.plist \
+                     -exportPath build/ipa \
+                     -allowProvisioningUpdates
+
+    artifacts:
+      - build/ipa/*.ipa
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+
+    publishing:
+      email:
+        recipients:
+          - jouw@email.com   # vervang door je eigen mail
+        notify:
+          success: true
+          failure: true
